@@ -2,10 +2,10 @@ import {
   IoCodeWorking,
   IoLogoGithub,
   IoLogoYoutube,
-  IoLogoTwitter,
   IoLogoLinkedin,
-  IoLogoWhatsapp,
 } from "react-icons/io5";
+
+import GithubImage from "./images/github.jpeg";
 
 export const Experience = [
   {
@@ -52,5 +52,66 @@ export const Experience = [
     location: "@Liceo Fanoli in Cittadella, Italy",
     description:
       "Arts and graphic design, Adobe photoshop and Illustrator, Philosophy, History of Arts",
+  },
+];
+
+export const Projects = [
+  {
+    id: 1,
+    name: "3d portfolio",
+    imageSrc: GithubImage,
+    techs: "React Js, Spline3D, Firebase",
+    github: "https://github.com/lauraspina/movie-app",
+  },
+  {
+    id: 2,
+    name: "Rijksmuseum Application",
+    imageSrc: GithubImage,
+    techs: "Vue Js",
+    github: "https://github.com/lauraspina/Rijksmuseum-app",
+  },
+  {
+    id: 3,
+    name: "Image Gallery",
+    imageSrc: GithubImage,
+    techs: "Html, Css, Javascript",
+    github: "https://github.com/lauraspina/image-gallery",
+  },
+  {
+    id: 4,
+    name: "Pomodoro App",
+    imageSrc: GithubImage,
+    techs: "Html, Css, Javascript",
+    github: "https://github.com/lauraspina/pomodoro-app",
+  },
+  {
+    id: 5,
+    name: "Movie App",
+    imageSrc: GithubImage,
+    techs: "React Js",
+    github: "https://github.com/lauraspina/movie-app",
+  },
+];
+
+export const SocialLinks = [
+  {
+    id: 1,
+    iconSrc: <IoLogoGithub className="text-textBase text-3xl cursor-pointer" />,
+    name: "GitHub",
+    link: "https://github.com/lauraspina",
+  },
+  {
+    id: 1,
+    iconSrc: <IoLogoYoutube className="text-red-500 text-3xl cursor-pointer" />,
+    name: "YouTube",
+    link: "https://www.youtube.com/channel/UCbV5SakvzjZmn1szO9PUFOg",
+  },
+  {
+    id: 1,
+    iconSrc: (
+      <IoLogoLinkedin className="text-blue-800 text-3xl cursor-pointer" />
+    ),
+    name: "LinkedIn",
+    link: "https://www.linkedin.com/in/laura-spina-80aa3b172/",
   },
 ];
