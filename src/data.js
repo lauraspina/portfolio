@@ -61,7 +61,7 @@ export const Projects = [
     name: "3d portfolio",
     imageSrc: GithubImage,
     techs: "React Js, Spline3D, Firebase",
-    github: "https://github.com/lauraspina/movie-app",
+    github: "https://github.com/lauraspina/portfolio",
   },
   {
     id: 2,
