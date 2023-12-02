@@ -19,7 +19,7 @@ export const Experience = [
   },
   {
     id: 2,
-    date: "2021 - 2022",
+    date: "2020 - 2022",
     iconsSrc: <IoCodeWorking />,
     title: "Frontend Developer",
     location: "@openmind in Monza, Italy",
@@ -28,7 +28,7 @@ export const Experience = [
   },
   {
     id: 3,
-    date: "2020-2021",
+    date: "2019-2020",
     iconsSrc: <IoCodeWorking />,
     title: "Full stack development Bootcamp",
     location: "@Talent Garden in Milan, Italy",
@@ -37,7 +37,7 @@ export const Experience = [
   },
   {
     id: 4,
-    date: "2015-2020",
+    date: "2015-2019",
     iconsSrc: <IoCodeWorking />,
     title: "All the possible work experiences",
     location: "Venice, Italy",
