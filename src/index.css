@@ -1,12 +1,17 @@
-@import url(https://fonts.googleapis.com/css?family=Jost:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+@import url(https://fonts.googleapis.com/css?family=Poppins:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+@import url(https://fonts.googleapis.com/css?family=Rammetto+One:regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
 
 body {
   margin: 0;
-  font-family: "Jost", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+  font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
     "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.rammetto {
+  font-family: "Rammetto One";
 }
 
 code {
@@ -22,6 +27,134 @@ html::-webkit-scrollbar {
 html,
 body {
   scroll-behavior: smooth;
+}
+
+.circle-1 {
+  position: absolute;
+  top: 15%;
+  left: 15%;
+  background: #4776E6;
+  background: -webkit-linear-gradient(to right, #8E54E9, #4776E6);
+  background: linear-gradient(to right, #8E54E9, #4776E6);
+  height: 450px;
+  width: 450px;
+  border-radius: 50%;
+}
+.circle-2{
+  position: absolute;
+  bottom: 5%;
+  right: 35%;
+  background: #bc4e9c;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #f80759, #bc4e9c);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #f80759, #bc4e9c);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  height: 400px;
+  width: 400px;
+  border-radius: 50%;
+}
+.circle-3 {
+  position: absolute;
+  top: 27%;
+  right: 25%;
+  background-color: #FF3CAC;
+  background: #ff9966;
+  background: -webkit-linear-gradient(to right, #ff5e62, #ff9966);
+  background: linear-gradient(to right, #ff5e62, #ff9966);
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+}
+.card {
+
+  border-radius: 20px;
+  /* other styles */
+  background: rgba(39, 39, 39, 0.1);
+  backdrop-filter: blur(60px);
+  /* fallback cross browser compatibility */
+  -webkit-backdrop-filter: blur(60px);
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 40px;
+  color: #fff;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 80px rgba(0, 0, 0, 0.3);
+}
+
+
+.card>div>p {
+  letter-spacing: 2px;
+  word-spacing: 5px;
+  margin-top: 10px;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.card>p {
+  position: absolute;
+  bottom: 10%;
+  fill: #fff;
+  letter-spacing: 3px;
+  word-spacing: 10px;
+  margin-top: 10px;
+}
+
+
+
+.circle-1{
+  animation: bounce 4s linear infinite;
+}
+.circle-2{
+  animation: bounce 4s linear infinite 1s;
+}
+.circle-3 {
+  animation: bounce 4s linear infinite 2s;
+}
+@keyframes bounce {
+
+  0% {
+    transform: translateY(0px);
+  }
+
+  25% {
+    transform: translateY(10px);
+  }
+
+  50% {
+    transform: translateY(0px);
+  }
+
+  75% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+
+}
+
+.background-animate {
+  background-size: 400%;
+
+  -webkit-animation: AnimationName 20s ease infinite;
+  -moz-animation: AnimationName 20s ease infinite;
+  animation: AnimationName 20s ease infinite;
+}
+
+@keyframes AnimationName {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  25% {
+    background-position: 80% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
 }
 
 @tailwind base;

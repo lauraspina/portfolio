@@ -1,4 +1,3 @@
-import Spline from "@splinetool/react-spline";
 import {
   VerticalTimeline,
   VerticalTimelineElement,
@@ -6,140 +5,90 @@ import {
 import "react-vertical-timeline-component/style.min.css";
 import { Experience, Projects, SocialLinks } from "./data";
 import { useState } from "react";
-import { IoMenu, IoLogoGithub } from "react-icons/io5";
+import { IoLogoGithub, IoMenu } from "react-icons/io5";
 import Laura from "./images/laura.jpg";
 import CV from "./images/CV_Laura_Spina.pdf";
 import { AnimatePresence, motion } from "framer-motion";
+import Navigation from "./components/Navigation";
+import Typist from "react-typist";
 
 function App() {
   const [isActive, setIsActive] = useState(false);
 
   return (
     <AnimatePresence initial={false}>
-      <div className="flex w-screen min-h-screen flex-col items-center justify-center relative bg-primary pb-20">
-        <nav className="w-full px-6 z-50  fixed inset-x-0 top-2 flex justify-center items-center ">
-          <div className=" w-full md:w-880 bg-navBar p-4 rounded-2xl flex items-center">
-            <p className="text-lg text-slate-200 font-medium">Laura Spina</p>
-            <div className="hidden md:flex items-center gap-6 ml-6 flex-1">
-              <a
-                href="#home"
-                className="text-base text-textBase font-medium hover:text-slate-100 cursor-pointer duration-100 ease-in"
-              >
-                Home
-              </a>
-              <a
-                href="#about"
-                className="text-base text-textBase font-medium hover:text-slate-100 cursor-pointer duration-100 ease-in"
-              >
-                About
-              </a>
-              <a
-                href="#projects"
-                className="text-base text-textBase font-medium hover:text-slate-100 cursor-pointer duration-100 ease-in"
-              >
-                Projects
-              </a>
-              <a
-                href="#contacts"
-                className="text-base text-textBase font-medium hover:text-slate-100 cursor-pointer duration-100 ease-in"
-              >
-                Contact
-              </a>
-              <a
-                href="#"
-                className="ml-auto text-base text-textBase font-medium hover:text-slate-100 cursor-pointer border border-textBase px-4 py-1 rounded-2xl hover:border-gray-100 duration-100 ease-in"
-              >
-                Download
-              </a>
-            </div>
-            <div className="block md:hidden ml-auto cursor-pointer">
-              <IoMenu
-                onClick={() => setIsActive(!isActive)}
-                className="text-2xl text-textBase"
-              />
-            </div>
+      <div className="flex w-screen min-h-screen flex-col items-center justify-center relative bg-sand pb-20">
+        <Navigation isActive={isActive} setIsActive={setIsActive} />
+        <div className="bg-terra opacity-20 absolute top-0 bottom-0 left-[8.33%] w-[1px]" />
+        {[...Array(11).keys()].map((index) => (
+          <div
+            className="bg-terra opacity-20 absolute top-0 bottom-0  w-[1px]"
+            key={index}
+            style={{
+              left: `${(index + 2) * 8.33}%`, // Start from the second column
+            }}
+          />
+        ))}
 
-            {isActive && (
-              <div className="p-4 w-275 bg-navBar rounded-lg fixed top-24 right-16 flex flex-col items-center justify-evenly gap-6">
-                <a
-                  href="#home"
-                  className="text-base text-textBase font-medium hover:text-slate-100 cursor-pointer duration-100 ease-in"
-                  onClick={() => setIsActive(false)}
-                >
-                  Home
-                </a>
-                <a
-                  href="#about"
-                  className="text-base text-textBase font-medium hover:text-slate-100 cursor-pointer duration-100 ease-in"
-                  onClick={() => setIsActive(false)}
-                >
-                  About
-                </a>
-                <a
-                  href="#projects"
-                  className="text-base text-textBase font-medium hover:text-slate-100 cursor-pointer duration-100 ease-in"
-                  onClick={() => setIsActive(false)}
-                >
-                  Projects
-                </a>
-                <a
-                  href="#contacts"
-                  className="text-base text-textBase font-medium hover:text-slate-100 cursor-pointer duration-100 ease-in"
-                  onClick={() => setIsActive(false)}
-                >
-                  Contact
-                </a>
-                <a
-                  href={CV}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-base text-textBase font-medium hover:text-slate-100 cursor-pointer border border-textBase px-2 py-1 rounded-2xl hover:border-gray-100 duration-100 ease-in"
-                  onClick={() => setIsActive(false)}
-                >
-                  Download CV
-                </a>
-              </div>
-            )}
-          </div>
-        </nav>
+        <div className="w-full h-full min-h-screen relative">
+          <div className="absolute h-full w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
+            <div className="circle-1"></div>
+            <div className="circle-2"></div>
+            <div className="circle-3"></div>
+            <div className="card w-[400px] h-[250px] sm:w-[600px]  sm:h-[400px] absolute left-1/2 -translate-x-1/2 -translate-y-1/2 top-1/2">
+              <h1
+                className=" bg-gradient-to-r
+              from-pink-500
+              via-red-500
+              to-yellow-500
+              text-2xl
+              md:text-4xl
+               text-transparent  bg-clip-text leading-snug "
+              >
+                Laura Spina
+              </h1>
+              <h2
+                className=" text-xl
+              md:text-4xl text-secondary "
+              >
+                Frontend Developer
+              </h2>
 
-        <div className="w-screen h-screen  min-h-screen relative" id="home">
-          <Spline scene="https://prod.spline.design/xkEapec-O0C9Jeo7/scene.splinecode" />
+              <p className="mt-3 text-secondary text-sm md:text-2xl">
+                React, NextJs, Framer Motion, TailwindCSS
+              </p>
 
-          <div className="absolute bottom-10 w-full flex justify-center items-center">
-            <div className="shadow-md py-3 px-8 flex items-center justify-center bg-zinc-900 rounded-3xl ">
-              <p className="text-white">Press and drag to orbit</p>
+              <i className="ri-visa-line"></i>
             </div>
           </div>
         </div>
 
-        <main className="w-[80%] mt-5 ">
+        <main className="w-[80%]">
           <section
-            className="w-full grid grid-cols-1 md:grid-cols-2 gap-4 my-24"
+            className="w-full grid grid-cols-1 md:grid-cols-2 gap-4 mb-24"
             id="about"
           >
             <div className="w-full h-420 flex items-center justify-center">
-              <div className="w-275 h-340 bg-blue-200 rounded-md relative">
+              <div className="w-275 h-[275px] bg-terra rounded-full relative">
                 <img
                   src={Laura}
-                  className="w-full h-full absolute left-4 top-4 object-cover rounded-lg shadow-lg"
+                  className="w-full h-full absolute left-4 top-4 object-cover object-top rounded-full shadow-lg"
                 />
               </div>
             </div>
 
             <div className="w-full h-420 flex flex-col items-center justify-center">
               <p className="text-lg text-textBase text-center">
-                I am Laura, a Frontend developer with marketing and copywriting
-                experience. I am a creative person who wants to leave a mark. I
-                am very ambitious and I love challenges, besides I like to work
-                in a precise and orderly way. I'm fluent in English, Spanish,
-                Italian and a little bit of French. I can cook very well and I
-                like street photography.
+                Hola, my name is Laura and I am a creative Frontend developer
+                with strong eye for design and attention for detail. I am very
+                ambitious and I love challenges. My passions are street
+                photography, books and interior design. I'm fluent in English,
+                Spanish, Italian and French. <br />I can cook very well.
               </p>
 
               <a href={CV} target="_blank" rel="noreferrer">
-                <button class="w-full md:w-auto relative mt-6 inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-2xl group bg-gradient-to-br from-green-400 to-blue-600 group-hover:from-green-400 group-hover:to-blue-600 hover:text-white dark:text-white focus:ring-4 focus:ring-green-200 dark:focus:ring-green-800 hover:shadow-lg hover:shadow-teal-500/50 hover:dark:shadow-lg hover:dark:shadow-teal-800/80">
-                  <span class="w-full md:w-auto relative px-5 py-2 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-2xl group-hover:bg-opacity-0">
+                <button class="w-full md:w-auto relative mt-6 inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-secondary rounded-2xl group bg-gradient-to-br from-red-500 to-pink-500 via-yellow-500    focus:ring-4 focus:ring-green-200    ">
+                  <span class="w-full md:w-auto relative px-5 py-2  bg-white dark:bg-sand rounded-2xl ">
                     Download CV
                   </span>
                 </button>
@@ -155,14 +104,17 @@ function App() {
                     key={experience.id}
                     className="vertical-timeline-element--work"
                     contentStyle={{
-                      background: "rgb(21, 24, 31)",
-                      color: "#888",
+                      background: "#FEFAE0",
+                      color: "#283618",
                     }}
                     contentArrowStyle={{
                       borderRight: "7px solid  rgb(21, 24, 31)",
                     }}
                     date={experience.date}
-                    iconStyle={{ background: "rgb(21, 24, 31)", color: "#888" }}
+                    iconStyle={{
+                      background: "#283618",
+                      color: "#FEFAE0",
+                    }}
                     icon={experience.iconsSrc}
                   >
                     <h3 className="vertical-timeline-element-title">
@@ -185,9 +137,9 @@ function App() {
               Projects.map((n, i) => (
                 <motion.div
                   key={n.id}
-                  className="border border-zinc-800 rounded-md p-2 min-w-[275px] md:max-w-[275px] hover:border-zinc-600 duration-100 ease-in-out"
+                  className="border z-10 border-zinc-800 rounded-md p-2 min-w-[275px] md:max-w-[275px] hover:border-zinc-600 duration-100 ease-in-out"
                 >
-                  <p className="text-lg text-textBase font-medium uppercase">
+                  <p className="text-lg text-terra font-medium uppercase">
                     {n.name.length > 25 ? `${n.name.slice(0, 25)}...` : n.name}
                   </p>
 
@@ -198,13 +150,13 @@ function App() {
                   />
 
                   <div className="flex flex-1 items-center justify-between">
-                    <p className="text-lg text-gray-300">
+                    <p className="text-lg text-secondary">
                       Technologies
-                      <span className="block text-sm text-gray-500">
+                      <span className="block text-sm text-primary">
                         {n.techs}
                       </span>
                     </p>
-                    <a href={n.github} target="_blank">
+                    <a href={n.github} target="_blank" rel="noreferrer">
                       <motion.div whileTap={{ scale: 0.5 }}>
                         <IoLogoGithub className="text-textBase text-3xl cursor-pointer" />
                       </motion.div>
@@ -218,15 +170,16 @@ function App() {
             id="contacts"
             className="flex flex-col items-center justify-evenly w-full my-24"
           >
-            <p className="text-2xl text-gray-400 capitalize">Follow me on</p>
+            <p className="text-2xl text-secondary capitalize">Follow me on</p>
             <div className="flex items-center justify-evenly w-full my-4 flex-wrap gap-4">
               {SocialLinks &&
                 SocialLinks.map((n) => (
                   <motion.a
                     whileTap={{ scale: 0.8 }}
                     href={n.link}
+                    target="_blank"
                     key={n.id}
-                    className="w-full md:w-auto px-3 md:px-8 py-5 border border-zinc-800 rounded-2xl hover:border-zinc-600 duration-100 ease-in-out cursor-pointer flex items-center justify-center gap-3"
+                    className="w-full md:w-auto px-3 md:px-5 py-3 border border-secondary rounded-2xl hover:border-zinc-600 duration-100 ease-in-out cursor-pointer flex items-center justify-center gap-3"
                   >
                     {n.iconSrc}
                     <p className="text-lg text-textBase">{n.name}</p>
