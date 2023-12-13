@@ -5,7 +5,7 @@ import CV from "../images/CV_Laura_Spina.pdf";
 const Navigation = ({ isActive, setIsActive }) => {
   return (
     <nav className="w-full px-6 z-50  fixed inset-x-0 top-2 flex justify-center items-center ">
-      <div className="backdrop-filter  w-full md:w-880 bg-secondary border-secondary border p-4 rounded-2xl flex items-center">
+      <div className="backdrop-filter w-full md:w-880 bg-secondary border-secondary border p-4 rounded-2xl flex items-center">
         <p className="text-white leading-snug text-lg font-medium">
           Laura Spina
         </p>
